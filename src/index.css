@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+
+/* In your main CSS file or inside a <style> tag */
+:root,
+[data-theme="mytheme"] {
+  --color-primary: #f19509;
+  --color-primary-dark: #e86f00;
+  --color-light-orange: #f1dabf;
+  --color-dark-gray-rgb: 26, 31, 37;
+  --color-light-gray: #272c35;
+  --color-dark-gray: #1A1F25;
+
+  --container-padding: 1rem;
+  --container-padding-sm: 2rem;
+
+  /* DaisyUI-specific variables you can override: */
+  --p: var(--color-primary);
+  --pf: var(--color-primary-dark);
+  --pc: #ffffff;
+
+  --b1: var(--color-dark-gray);
+  --b2: var(--color-light-gray);
+  --bc: #ffffff;
+
+  --a: var(--color-light-orange);
+  --ac: #1a1a1a;
+}
+
+
+@layer utilities {
+  .img-shadow {
+    filter: drop-shadow(40px 50px 25px #0f1115);
+  }
+
+  .img-shadow2 {
+    filter: drop-shadow(10px 30px 15px #3030307a);
+  }
+
+  .input-style {
+    @apply px-4 py-2 border-gray-400 rounded-md;
+    border-width: 1px;
+    /* Use plain CSS for unsupported utilities */
+  }
+
+  .primary-btn {
+    @apply text-white px-4 py-2 rounded-md duration-200;
+    background-color: var(--color-primary);
+  }
+  .primary-btn:hover{
+    background-color: var(--color-primary-dark);
+
+  }
+}
+.container{
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
